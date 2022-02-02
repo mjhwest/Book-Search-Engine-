@@ -7,7 +7,4 @@ type Query {
     me: User
 }, 
 
-
-
-
 `;

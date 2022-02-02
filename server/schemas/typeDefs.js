@@ -11,12 +11,12 @@ type Query {
 type Mutation {
     login(email: String!, email: String!): Auth
     addUser(username:String!, email:String!, password:String!): Auth
-    saveBook(input: SaveBookInput): User
+    saveBook(input: SavedBookInput): User
     removeBook(bookId: String): User
 }
 
 
-input SavedBookInout {
+input SavedBookInput {
     author: [String]
     description: String
     bookId: String

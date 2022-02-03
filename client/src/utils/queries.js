@@ -10,7 +10,7 @@ query me {
     _id
     username
     email 
-    bookCount 
+    bookCount n
     savedBooks {
         authors 
         description

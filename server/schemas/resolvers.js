@@ -35,6 +35,7 @@ const resolvers = {
       },
       //accept the 2nd argument as book which is an array, {book is an inpt type} 
       saveBook: async (parent, { input }, context) => {
+        console.log("inside Save Book", context.user._id, input)
         if (context.user) {
             const updatedUser = await User.findOneAndUpdate(
                 //match user ID 
@@ -44,6 +45,7 @@ const resolvers = {
                 //update new info new: true (NOT MAPPING)
                 { new: true }
             )
+            console.log("updatedUser", updatedUser());
             return updatedUser;
         }
         throw new AuthenticationError('You need to be logged in!')

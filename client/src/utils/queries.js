@@ -22,20 +22,3 @@ query me {
 }
 `;
 
-
-//me is User 
-// __id
-// username 
-// email 
-// bookCount 
-// // savedBooks - savedBooks = [Book] =
-// i.e. a user can have multiple books {
-//     authors 
-//     description 
-//     bookId 
-//     image
-//     link
-//     title 
-
-
-// }

@@ -15,7 +15,6 @@ const PORT = process.env.PORT || 3001;
 
 // this may not be needed ref topic 25 server.js
 // const routes = require('./routes');
-
 // apollo server
 const server = new ApolloServer({
   typeDefs,

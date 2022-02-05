@@ -1,29 +1,6 @@
 const { gql } = require('apollo-server-express');
 
-
 const typeDefs = gql`
-
-
-type Query {
-    me: User
-} 
-
-type Mutation {
-    login(email: String!, password: String!): Auth
-    addUser(username:String!, email:String!, password:String!): Auth
-    saveBook(input: SavedBookInput): User
-    removeBook(bookId: String): User
-}
-
-
-input SavedBookInput {
-    authors: [String]
-    description: String
-    bookId: String
-    image: String 
-    link: String
-    title: String
-}
 
 type User {
     _id: ID
@@ -47,11 +24,30 @@ type Auth {
     user: User
 }
 
+type Query {
+    me: User
+} 
+
+input SavedBookInput {
+    authors: [String]
+    description: String
+    bookId: String
+    image: String 
+    link: String
+    title: String
+}
+
+type Mutation {
+    login(email: String!, password: String!): Auth
+    addUser(username:String!, email:String!, password:String!): Auth
+    saveBook(input: SavedBookInput): User
+    removeBook(bookId: String): User
+}
+
+
 `;
 
 module.exports = typeDefs;
-
-
 
 //mutation types  are linked to relationships with resolvers. 
 //i.e login requires email password, logging in awaits the User, therefore check 

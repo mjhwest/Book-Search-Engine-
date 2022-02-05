@@ -11,6 +11,7 @@ mutation login($email: String!, $password: String!){
     }
 }
 `;
+
 //ref above topic 26, client, src, utils, mutations.js
 //check about mutation Login, readme says loginUser, but mutation is reffered to as Login. 
 export const ADD_USER = gql`

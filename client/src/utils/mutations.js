@@ -1,5 +1,7 @@
 import { gql } from "@apollo/client";
 
+//login
+
 export const LOGIN_USER = gql`
 mutation login($email: String!, $password: String!){
     login(email: $email, password: $password){
@@ -12,8 +14,7 @@ mutation login($email: String!, $password: String!){
 }
 `;
 
-//ref above topic 26, client, src, utils, mutations.js
-//check about mutation Login, readme says loginUser, but mutation is reffered to as Login. 
+//add user 
 export const ADD_USER = gql`
 mutation addUser($username: String!, $email: String!, $password: String!) {
     addUser(username: $username, email: $email, password: $password) {
@@ -23,12 +24,11 @@ mutation addUser($username: String!, $email: String!, $password: String!) {
             username
              }
         }
-    }
 }
 `;
-//not sure if addUser is correct
 
 
+//save book 
 export const SAVE_BOOK = gql`
 mutation saveBook($input: SavedBookInput) {
     saveBook(input: $input){
@@ -48,7 +48,7 @@ mutation saveBook($input: SavedBookInput) {
 }
 `;
 
-
+//remove book 
 export const REMOVE_BOOK = gql`
 mutation removeBook($bookId: String) {
     removeBook(bookId: $bookId) {
@@ -67,14 +67,3 @@ mutation removeBook($bookId: String) {
     }
 }
 `;
-
-// mutations.js:
-//reference topic 26. client src, utils, mutations.js
-
-// LOGIN_USER will execute the loginUser mutation set up using Apollo Server. DONE
-
-// ADD_USER will execute the addUser mutation. DONE 
-
-// SAVE_BOOK will execute the saveBook mutation. DONE 
-
-// REMOVE_BOOK will execute the removeBook mutation. DONE 

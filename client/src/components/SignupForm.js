@@ -1,25 +1,32 @@
+// see SignupForm.js for comments
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
-// import useMutation function
-import {ADD_USER} from "../utils/mutations";
-//import useMutation hook
+
+//commented out loginUSer from API File 
+// import { loginUser } from '../utils/API';
+import Auth from '../utils/auth';
+
+//imprt use Mutation hook so that we can apply ADD_USER mutation function
 import { useMutation } from '@apollo/react-hooks';
 
-// comment out API 
-// import { createUser } from '../utils/API';
-import Auth from '../utils/auth';
+//import the add_user mutation functionanilty 
+import {ADD_USER} from "../utils/mutations";
+
 
 const SignupForm = () => {
   // set initial form state
-  const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
+  const [userFormData, setUserFormData] = useState({
+     username: '',
+      email: '', 
+      password: '' 
+    });
   // set state for form validation
   const [validated] = useState(false);
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
 
-
-  //ADDED THIS, define mutation for adding a user. 
-  const [addUser, {error}] = useMutation(ADD_USER); 
+  //ADD adduser mutation functionality using ADD_USER mutation.
+  const [ addUser, {error, data }] = useMutation(ADD_USER);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -37,20 +44,15 @@ const SignupForm = () => {
     }
 
     try {
-      const {data} = await addUser({
-        variables: {...userFormData},
+      const { data } = await addUser({
+        variables: { ...userFormData },
       });
       Auth.login(data.addUser.token);
     } catch (err) {
       console.error(error);
       setShowAlert(true);
     }
-     
-    setUserFormData({
-      username: " ",
-      email: " ",
-      password: " ",
-    });
+
   };
 
   return (

@@ -1,17 +1,13 @@
 // see SignupForm.js for comments
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
-
 //commented out loginUSer from API File 
 // import { loginUser } from '../utils/API';
 import Auth from '../utils/auth';
-
 //imprt use Mutation hook so that we can apply ADD_USER mutation function
 import { useMutation } from '@apollo/react-hooks';
-
 //import the add_user mutation functionanilty 
 import {ADD_USER} from "../utils/mutations";
-
 
 const SignupForm = () => {
   // set initial form state
@@ -24,7 +20,6 @@ const SignupForm = () => {
   const [validated] = useState(false);
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
-
   //ADD adduser mutation functionality using ADD_USER mutation.
   const [ addUser, {error, data }] = useMutation(ADD_USER);
 

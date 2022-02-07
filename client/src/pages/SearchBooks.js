@@ -82,13 +82,13 @@ const SearchBooks = () => {
 
     try {
       const response = await saveBook({
-        variables: { input: bookToSave,}
+        variables: {input:{...bookToSave},}
 
       });
 
-      if (!response.ok) {
-        throw new Error('something went wrong!');
-      }
+      // if (!response.ok) {
+      //   throw new Error('something went wrong!');
+      // }
 
       // if book successfully saves to user's account, save book id to state
       setSavedBookIds([...savedBookIds, bookToSave.bookId]);
@@ -147,7 +147,7 @@ const SearchBooks = () => {
                       className='btn-block btn-info'
                       onClick={() => handleSaveBook(book.bookId)}>
                       {savedBookIds?.some((savedBookId) => savedBookId === book.bookId)
-                        ? 'This book has already been saved!'
+                        ? 'Book Saved!'
                         : 'Save this Book!'}
                     </Button>
                   )}

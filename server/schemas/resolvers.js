@@ -9,7 +9,8 @@ const resolvers = {
   Query: {
     me: async (parent, args, context) => {
         if (context.user) {
-          return User.findOne({ _id: context.user._id }).select('User');
+          return User.findOne({ _id: context.user._id }).select();
+          //this is now saving everything in the save array. 
         }
         throw new AuthenticationError('You need to be logged in!');
       },
@@ -45,7 +46,7 @@ const resolvers = {
                 //update new info new: true (NOT MAPPING)
                 { new: true }
             )
-            console.log("updatedUser", updatedUser());
+            console.log("updatedUser", updatedUser);
             return updatedUser;
         }
         throw new AuthenticationError('You need to be logged in!')

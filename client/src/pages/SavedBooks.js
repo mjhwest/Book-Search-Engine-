@@ -1,18 +1,14 @@
 //remove useEffect, comment out use state as it is not being used. 
 import React /**  useState**/ /**useEffect**/  from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
-
 //remove deleteBook function thats imported from API file, as we are using the REMOVE_BOOK mutation, comment out getME as its not used. 
 // import { getMe}  /**deleteBook**/  from '../utils/API';
 import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
-
 //import the useQuery and useMutation hooks 
-import { useQuery, useMutation } from '@apollo/react-hooks';
-
+import { useQuery, useMutation } from '@apollo/client';
 //import GET ME query. 
 import {GET_ME} from "../utils/queries";
-
 //import REMOVE_BOOK Mutation 
 import {REMOVE_BOOK} from "../utils/mutations";
 
@@ -26,9 +22,6 @@ const {loading, error1, data } = useQuery(GET_ME)
 const userData = data?.me || [];
 
 console.log(loading, error1, data, userData)
-
-
-
 
 //execute REMOVE_BOOK mutation
 const [removeBook, {error}] = useMutation(REMOVE_BOOK);

@@ -188,4 +188,4 @@ If the user decides to remove a book from their collection they simply click 'De
 If you would like to contribute to this project please contact me via email at micahelwest.webdev@gmail.com
 
 ## License
-This project is released under the [MIT LICENSE](https://github.com/mjhwest/Book-Search-Engine-/new/main)
+This project is released under the [MIT LICENSE](https://github.com/mjhwest/Book-Search-Engine-/blob/main/LICENSE)

@@ -1,12 +1,13 @@
 # 21 MERN: Book Search Engine
 
-## Your Task
+![License](https://img.shields.io/badge/license-MIT-blue)
 
-Your assignment this week is emblematic of the fact that most modern websites are driven by two things: data and user demands. This shouldn't come as a surprise, as the ability to personalize user data is the cornerstone of real-world web development today. And as user demands evolve, applications need to be more performant.
+## Description 
+We were tasked to examine started code which was a fully functioninh Google Books API search engine built with RESTful API, and refactor it to be used with GraphQL API built with Apollo Server. The app was built using the MERN stack with a react front end, MonhoDB database and Node.js/Express.js server and API. 
 
-This week, you’ll take starter code with a fully functioning Google Books API search engine built with a RESTful API, and refactor it to be a GraphQL API built with Apollo Server. The app was built using the MERN stack with a React front end, MongoDB database, and Node.js/Express.js server and API. It's already set up to allow users to save book searches to the back end. 
+One of the biggest challenges with this task was going through all the code to understand how it was already functioning. However, this was an important task as i know feel confident in refactoring RESTful API to a GraphQL API built with Apollo Server. 
 
-To complete the assignment, you’ll need to do the following:
+In order to complete the tasked, the following needed to be complete: 
 
 1. Set up an Apollo Server to use GraphQL queries and mutations to fetch and modify data, replacing the existing RESTful API.
 
@@ -14,75 +15,9 @@ To complete the assignment, you’ll need to do the following:
 
 3. Create an Apollo Provider so that requests can communicate with an Apollo Server.
 
-4. Deploy your application to Heroku with a MongoDB database using MongoDB Atlas. Use the [Deploy with Heroku and MongoDB Atlas](https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-heroku-and-mongodb-atlas) walkthrough for instructions.
+4. Deploy your application to Heroku with a MongoDB database using MongoDB Atlas. 
 
-
-## User Story
-
-```md
-AS AN avid reader
-I WANT to search for new books to read
-SO THAT I can keep a list of books to purchase
-```
-
-
-## Acceptance Criteria
-
-```md
-GIVEN a book search engine
-WHEN I load the search engine
-THEN I am presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button - DONE 
-WHEN I click on the Search for Books menu option
-THEN I am presented with an input field to search for books and a submit button - DONE
-WHEN I am not logged in and enter a search term in the input field and click the submit button
-THEN I am presented with several search results, each featuring a book’s title, author, description, image, and a link to that book on the Google Books site - NO LINK TO GOOGLE BOOKS
-WHEN I click on the Login/Signup menu option
-THEN a modal appears on the screen with a toggle between the option to log in or sign up
-WHEN the toggle is set to Signup
-THEN I am presented with three inputs for a username, an email address, and a password, and a signup button
-WHEN the toggle is set to Login
-THEN I am presented with two inputs for an email address and a password and login button
-WHEN I enter a valid email address and create a password and click on the signup button
-THEN my user account is created and I am logged in to the site
-WHEN I enter my account’s email address and password and click on the login button
-THEN I the modal closes and I am logged in to the site
-WHEN I am logged in to the site
-THEN the menu options change to Search for Books, an option to see my saved books, and Logout
-WHEN I am logged in and enter a search term in the input field and click the submit button
-THEN I am presented with several search results, each featuring a book’s title, author, description, image, and a link to that book on the Google Books site and a button to save a book to my account
-WHEN I click on the Save button on a book
-THEN that book’s information is saved to my account
-WHEN I click on the option to see my saved books
-THEN I am presented with all of the books I have saved to my account, each featuring the book’s title, author, description, image, and a link to that book on the Google Books site and a button to remove a book from my account
-WHEN I click on the Remove button on a book
-THEN that book is deleted from my saved books list
-WHEN I click on the Logout button
-THEN I am logged out of the site and presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button  
-```
-
-
-## Mock-Up
-
-Let's start by revisiting the web application's appearance and functionality.
-
-As you can see in the following animation, a user can type a search term (in this case, "star wars") in a search box and the results appear:
-
-![Animation shows "star wars" typed into a search box and books about Star Wars appearing as results.](./Assets/21-mern-homework-demo-01.gif)
-
-The user can save books by clicking "Save This Book!" under each search result, as shown in the following animation:
-
-![Animation shows user clicking "Save This Book!" button to save books that appear in search results. The button label changes to "Book Already Saved" after it is clicked and the book is saved.](./Assets/21-mern-homework-demo-02.gif)
-
-A user can view their saved books on a separate page, as shown in the following animation:
-
-![The Viewing Lernantino's Books page shows the books that the user Lernaninto has saved.](./Assets/21-mern-homework-demo-03.gif)
-
-
-## Getting Started
-
-In order for this application to use a GraphQL API, you’ll need to refactor the API to use GraphQL on the back end and add some functionality to the front end. The following sections contain details about the files you’ll need to modify on the back end and the front end.
-
-**Important**: Make sure to study the application before building upon it. Better yet, start by making a copy of it. It's already a working application&mdash;you're converting it from RESTful API practices to a GraphQL API.
+The following changes were made to the code: 
 
 ### Back-End Specifications
 
@@ -189,68 +124,68 @@ Additionally, you’ll need to complete the following tasks in each of these fro
 
 * `LoginForm.js`: Replace the `loginUser()` functionality imported from the `API` file with the `LOGIN_USER` mutation functionality.
 
+[To view the deployed application please click here](https://whispering-lowlands-75056.herokuapp.com/)
 
-## Grading Requirements
+![search](assets/search.png)
 
-This homework is graded based on the following criteria:
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the preceding acceptance criteria plus the following:
-
-	* Has an Apollo Server that uses GraphQL queries and mutations to fetch and modify data, replacing the existing RESTful API.
-
-	* Use an Apollo Server and apply it to the Express.js server as middleware.
-
-	* Include schema settings for resolvers and typeDefs as outlined in the homework instructions.
-
-	* Modify the existing authentication middleware to work in the context of a GraphQL API.
-
-	* Use an Apollo Provider so that the application can communicate with the Apollo Server.
-
-	* Application must be deployed to Heroku.
+## Table of Contents 
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Credits](#credits)
+- [License](#license)
 
 
-### Deployment: 32%
+## Installation
+In order to get this application installed on your device there are a few steps that need to occur. 
+Firstly, you must clone the code to your machine. 
+Once the the code has been cloned, in the root folder open the command line and enter 'npm install'. This will install all neccessary dependecnies that are required for the application to launch. 
 
-* Application deployed at live URL.
+Once this has complete, enter 'npm run build' this will allow the application to build and finally enter 'npm run develop' this will allow both the front end and back end server to run concurrently. 
 
-* Application loads with no errors.
+## Usage
+The application is straightforward to use. 
 
-* Application GitHub URL submitted.
+A user can search for any book to see if it is in the database. 
 
-* GitHub repository contains application code.
+![signup](assets/signup.png)
+
+However to save Books the user must signup. This is done by completing the form that requires a username, email and password. 
+
+![search2](assets/search2.png)
+
+If the user decides to save a book to their collection they click on the button savebook, and it will change to "book saved" 
+
+![saved](assets/saved.png)
+
+They can then click on 'see you books' to view all the books saved in their collection. 
+
+![collection](assets/collection.png)
+
+If the user decides to remove a book from their collection they simply click 'Delete this book' and the book is removed. 
+
+![delete](assets/delete.png)
+
+## Features 
+- apollo-server-express 
+- concurrently 
+- bcrypt
+- express
+- jsonwebtoken
+- mongoose 
+- graphql
+- nodemon 
+- apollo 
+- bootstrap
+- jwt-decode
+- react-dom 
+- react-router-dom
+- react-scripts 
+- react-bootstrap 
 
 
-### Application Quality: 15%
+## Contribute
+If you would like to contribute to this project please contact me via email at micahelwest.webdev@gmail.com
 
-* User experience is intuitive and easy to navigate.
-
-* User interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the homework instructions.
-
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains high-quality README file with description, screenshot, and link to the deployed application.
-
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
----
-© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+## License
+This project is released under the [MIT LICENSE](ADD LINK)
